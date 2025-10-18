@@ -35,7 +35,7 @@ Advanced algorithms are used to help agents perceive the world more accurately:
 ## ✨ Features
 
 - *Graphical Mode:* Watch the agents’ learning process and see their evolving strategies in real time.  
-- *Headless Training Mode:* Run simulations without graphics to train agents faster — utilize all CPU cores and simulate thousands of rounds in seconds.  
+- *Headless Training Mode:* Run simulations without graphics to train agents faster — utilize all CPU cores and simulate thousands of rounds in seconds! (İt all depends on your cpu's power)  
 - *Strategic AI:* Once trained, agents start using walls for cover, seekers develop corner-trapping tactics, and hiders discover the safest escape paths.
 
 ---

@@ -67,15 +67,15 @@ This project serves as a great introduction to reinforcement learning and offers
 If youd like to contribute, consider doing deez:
 
 ```
-🧍 More Agents: Add additional seekers or hiders for more complex dynamics.
+1 More Agents: Add additional seekers or hiders for more complex dynamics.
 
-🧠 Alternative Algorithms: Integrate advanced learning methods such as DQN (Deep Q-Networks).
+2 Alternative Algorithms: Integrate advanced learning methods such as DQN (Deep Q-Networks).
 
-🌍 Dynamic Maps: Generate environments with moving or evolving obstacles.
+3 Dynamic Maps: Generate environments with moving or evolving obstacles.
 
-💾 Save/Load Training: Save and reload Q-tables (agent “brains”) to continue training from where you left off.
+4 Save/Load Training: Save and reload Q-tables (agent “brains”) to continue training from where you left off.
 
-🎮 Player Interaction: Let a human player control an agent and compete against trained AI.
+5 Player Interaction: Let a human player control an agent and compete against trained AI.
 ```
 
 All contributions and suggestions are welcome!

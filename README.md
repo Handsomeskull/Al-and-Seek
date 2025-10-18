@@ -1,71 +1,90 @@
-# Al-and-Seek
-Ai learns to play hide and seek.
+# 🧠 AI and Seek
 
+This project is a hide-and-seek simulation where AI agents (one seeker and two hiders) gradually develop intelligent strategies using the *Q-learning* algorithm.  
+Through trial and error, agents learn about their environment and each other's behavior to maximize their chances of survival and success.
 
-AI and Seek: Pekiştirmeli Öğrenme ile Saklambaç Simülasyonu
+---
 
-[Oyunun bir turundan ekran görüntüsü]
+## 🎮 How the Simulation Works
 
-Bu proje, Q-learning algoritmasını kullanarak yapay zeka ajanlarının (bir ebe ve iki saklanan) zamanla akıllı stratejiler geliştirdiği bir saklambaç (hide-and-seek) simülasyonudur. Ajanlar, deneme-yanılma yoluyla çevrelerini ve diğer ajanların davranışlarını öğrenerek hayatta kalma ve hedef başarma şanslarını en üst düzeye çıkarmayı hedefler.
+The simulation is built on several key mechanisms that enable agents to exhibit complex behaviors:
 
-Simülasyon Nasıl Çalışır?
+### 🗺️ Game Environment
+Agents move in a *16x16 grid world* filled with randomly generated walls.  
+These walls act as both obstacles and strategic cover for seekers and hiders alike.
 
-Simülasyon, ajanların karmaşık davranışlar sergilemesini sağlayan birkaç temel mekanizma üzerine kurulmuştur:
+### 🧩 Learning Algorithm (Q-Learning)
+At the core of the project lies *Q-learning*, a model-free reinforcement learning technique.  
+Each agent maintains its own *Q-table (brain)*, which helps it estimate which action will yield the best outcome in a given state.
 
-Oyun Ortamı: Ajanlar, rastgele oluşturulmuş duvarlarla dolu 16x16'lık bir grid dünyasında hareket eder. Bu duvarlar, hem ebe hem de saklananlar için stratejik siper ve engel görevi görür.
+### ⚖️ Reward Shaping
+To accelerate learning, agents are rewarded or penalized not only for major events (like catching or being caught) but also for smaller, incremental actions:
 
-Öğrenme Algoritması (Q-Learning): Projenin kalbinde, model-free bir pekiştirmeli öğrenme tekniği olan Q-learning bulunur. Her ajan, belirli bir durumda hangi eylemin en iyi sonucu vereceğini tahmin etmesini sağlayan kendi Q-tablosunu (beynini) tutar.
+- *Seeker:* Gains rewards when approaching visible hiders and penalties when moving away.  
+- *Hiders:* Receive rewards for increasing real (path-based) distance from the seeker and penalties for getting closer.  
+  If a hider is strategically hidden *behind a wall while the seeker is nearby and line-of-sight is blocked*, it earns a bonus reward.
 
-Gelişmiş Ödül Sistemi (Reward Shaping): Ajanların öğrenmesini hızlandırmak için sadece büyük olaylar (yakalanma/yakalama) değil, aynı zamanda attıkları her küçük adım ödüllendirilir veya cezalandırılır:
+### 🧮 Smart Perception Systems
+Advanced algorithms are used to help agents perceive the world more accurately:
 
-Ebe (Seeker): Saklananlara görüş hattı açıkken yaklaştığında ödül, uzaklaştığında ceza alır.
+- *BFS (Breadth-First Search) Distance:* Calculates the shortest walking path between agents while considering obstacles.  
+- *Bresenham Line of Sight (LOS):* Checks whether a wall exists between two agents at pixel-level precision to ensure fair rewards.
 
-Saklananlar (Hiders): Ebeden gerçek yol mesafesiyle uzaklaştığında ödül, yaklaştığında ceza alır. Duvar arkasına stratejik olarak saklandığında (ebe yakın ve görüş hattı kapalıyken) ekstra bonus kazanır.
+---
 
-Akıllı Algılama: Ajanların dünyayı daha doğru algılaması için gelişmiş algoritmalar kullanılır:
+## ✨ Features
 
-BFS (Genişlik Öncelikli Arama) Mesafesi: Ajanlar arasındaki mesafeyi, duvarları hesaba katarak en kısa gerçek yürüyüş yoluna göre hesaplar.
+- *Graphical Mode:* Watch the agents’ learning process and see their evolving strategies in real time.  
+- *Headless Training Mode:* Run simulations without graphics to train agents faster — utilize all CPU cores and simulate thousands of rounds in seconds.  
+- *Strategic AI:* Once trained, agents start using walls for cover, seekers develop corner-trapping tactics, and hiders discover the safest escape paths.
 
-Bresenham Görüş Hattı (LOS): İki ajan arasında bir duvar olup olmadığını piksel hassasiyetinde kontrol ederek ödüllerin adil verilmesini sağlar.
+---
 
-Özellikler
+## 🚀 How to Run
+### 1. Clone the repo
+```
+https://github.com/Handsomeskull/Al-and-Seek.git
+```
 
-Grafiksel Mod: Ajanların öğrenme sürecini ve geliştirdikleri stratejileri canlı olarak izleyin.
-
-Headless Eğitim Modu: Görsel arayüz olmadan, işlemcinizin tüm çekirdeklerini paralel olarak kullanarak on binlerce turu saniyeler içinde simüle edin ve ajanlarınızı hızla eğitin.
-
-Stratejik Yapay Zeka: Yeterince eğitildiğinde, ajanların sadece rastgele hareket etmek yerine duvarları siper olarak kullandığını, ebenin köşeye sıkıştırma taktikleri geliştirdiğini ve saklananların en güvenli kaçış yollarını bulduğunu gözlemleyin.
-
-Nasıl Çalıştırılır?
-
-Gereksinimleri Yükleyin:
-
+### 2. Install Dependencies
+```bash
 pip install pygame numpy
+```
+## 3. Start the Simulation
+```
+python main.py
+```
+## 4. Choose Mode
+
+When prompted, select Graphical Mode or Fast Training(Headless) Mode.
+It’s recommended to start with fast training and then visualize the trained agents' performance.
+
+---
+
+### 🧭 Future Improvements & Contributions
+
+This project serves as a great introduction to reinforcement learning and offers many ways to expand and experiment.
+If youd like to contribute, consider doing deez:
+
+```
+🧍 More Agents: Add additional seekers or hiders for more complex dynamics.
+
+🧠 Alternative Algorithms: Integrate advanced learning methods such as DQN (Deep Q-Networks).
+
+🌍 Dynamic Maps: Generate environments with moving or evolving obstacles.
+
+💾 Save/Load Training: Save and reload Q-tables (agent “brains”) to continue training from where you left off.
+
+🎮 Player Interaction: Let a human player control an agent and compete against trained AI.
+```
+
+All contributions and suggestions are welcome!
+Feel free to open an issue or submit a pull request.
 
 
-Simülasyonu Başlatın:
+---
 
-python ai_and_seek.py
+💬 Acknowledgments
 
-
-Mod Seçin: Program size Grafiksel Mod veya Hızlı Eğitim Modu seçeneklerini sunacaktır. Hızlı eğitim ile başlayıp ardından eğitilmiş ajanların performansını izlemeniz tavsiye edilir.
-
-Gelecek Geliştirmeler ve Katkıda Bulunma
-
-Bu proje, pekiştirmeli öğrenme dünyasına harika bir giriş noktasıdır ve birçok yönde geliştirilebilir. Katkıda bulunmak isterseniz, aşağıdaki fikirleri değerlendirebilirsiniz:
-
-Daha Fazla Ajan: Ortama daha fazla ebe veya saklanan ekleyerek dinamikleri daha karmaşık hale getirme.
-
-Farklı Algoritmalar: DQN (Deep Q-Networks) gibi daha gelişmiş öğrenme algoritmalarını entegre etme.
-
-Dinamik Haritalar: Her turda değişen veya hareketli engeller içeren haritalar oluşturma.
-
-Eğitimi Kaydetme/Yükleme: Ajanların öğrendiği Q-tablolarını (beyinlerini) bir dosyaya kaydedip daha sonra tekrar yükleyerek eğitime kaldığı yerden devam etme.
-
-Kullanıcı Kontrolü: Bir ajanın kontrolünü kullanıcıya vererek eğitilmiş yapay zekaya karşı oynama imkanı.
-
-Tüm katkı ve önerilere açığız! Bir "issue" açabilir veya "pull request" gönderebilirsiniz.
-
-Teşekkürler
-
-Bu projeyi incelediğiniz, kullandığınız veya katkıda bulunduğunuz için teşekkür ederiz. Umarız pekiştirmeli öğrenmenin temellerini anlamak için eğlenceli ve öğretici bir kaynak olur.
+Thank you for checking out, using, or contributing to this project!
+I hope AI and Seek serves as a fun and educational resource for understanding the fundamentals of reinforcement learning.

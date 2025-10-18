@@ -64,7 +64,7 @@ It’s recommended to start with fast training and then visualize the trained ag
 ### 🧭 Future Improvements & Contributions
 
 This project serves as a great introduction to reinforcement learning and offers many ways to expand and experiment.
-If youd like to contribute, consider doing deez:
+If youd like to contribute, consider doing deez(to myself and the nerd guys out in the wild):
 
 ```
 1 More Agents: Add additional seekers or hiders for more complex dynamics.

@@ -84,7 +84,7 @@ Feel free to open an issue or submit a pull request.
 
 ---
 
-💬 Acknowledgments
+### Acknowledgments
 
 Thank you for checking out, using, or contributing to this project!
-I hope AI and Seek serves as a fun and educational resource for understanding the fundamentals of reinforcement learning.
+I hope AI and Seek serves as a fun and educational resource for understanding the fundamentals of reinforcement learning....and I know the short name of the project is AAS..My A-
